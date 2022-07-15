@@ -6,7 +6,7 @@ export default function Navbar(){
             <nav className="Navbar">
                 <ul>
                     <li><a href="/">Inicio</a></li>
-                    <li><a href="sobre">Sobre</a></li>
+                   {/* <li><a href="sobre">Sobre</a></li>*/}
                 </ul>
             </nav>
         </header>
