@@ -1,10 +1,17 @@
-import logo from './logo.svg';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+
+
+
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route to={'/'} element={<Inicio/>}/>
+        <Route to={'Sobre'} element={<Sobre/>}/>
+
+      </Routes>
+    </Router>
   );
 }
 
