@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Container(){
+export default function Container({children}){
     return(
-        <div>Conteiners</div>
+        <main className='container'>{children}</main>
     )
 }

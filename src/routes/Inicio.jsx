@@ -1,7 +1,15 @@
 import React from 'react'
 
+import Container from '../componentes/Container'
+
+
+
 export default function Inicio(){
     return(
-        <div>Inicio</div>
+        <Container>
+            <h1>
+                hello world **
+            </h1>
+        </Container>
     )
 }
