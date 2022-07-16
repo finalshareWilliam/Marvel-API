@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Container({children}){
-    return(
+    return (
         <main className='container'>{children}</main>
     )
 }
