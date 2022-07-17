@@ -1,6 +1,8 @@
 import { Input } from "@mui/material";
 import React, { useRef } from "react";
 
+import { fetchHerois } from "../utils/utils";
+
 export default function SearchBar({setter}){
     let input = useRef("")
 
