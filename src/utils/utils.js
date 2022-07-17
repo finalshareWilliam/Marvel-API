@@ -7,8 +7,8 @@ const getHash = (ts, secretKey, publicKey) => {
 
 }
 
-const fetchHeroi = async (id) => {
-    let baseUrl = `${API_URL}/v1/public/characters/${id}`
+const fetchHerois = async (value) => {
+    let baseUrl = `${API_URL}/v1/public/characters`
 
     let ts = Date.now().toString()
     let apiKey = process.env.REACT_APP_API_KEY
@@ -20,8 +20,29 @@ const fetchHeroi = async (id) => {
     try{
         let response = await fetch(url)
         let data = await response.json()
-        console.log(data)
-        return data
+        console.log(data.data.results)
+        return data.data.results;
+    } catch(err){
+        console.error(err)
+        return
+    }
+}
+
+const fetchHeroi = async (id) => {
+    let baseUrl = `${API_URL}/v1/public/characters/${id}`
+
+    let ts = Date.now().toString()
+    let apiKey = process.env.REACT_APP_API_KEY
+    let privateKey = process.env.REACT_APP_PRIVATE_KEY
+    let hash = getHash(ts, privateKey, apiKey)
+
+    let url = `${baseUrl}?ts=${ts}&apiKey=${apiKey}&hash=${hash}`
+
+    try{
+        let response = await fetch(url)
+        let data = await response.json()
+        console.log(data.data.results)
+        return data.data.results;
     } catch(err){
         console.error(err)
         return
