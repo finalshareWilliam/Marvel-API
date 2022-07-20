@@ -37,11 +37,11 @@ export default function HeroDetails() {
       <div className="hero__details-container">
         <img src={thumbnailUrl} alt="hero image full size" />
         <div className="hero__details">
-          <h4>Name</h4>
+          <h4>Nome</h4>
           <p>{name}</p>
           {description ? (
             <>
-              <h4>Description</h4>
+              <h4>Descricao</h4>
               <p>{description}</p>
             </>
           ) : null}

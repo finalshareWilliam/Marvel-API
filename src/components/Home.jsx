@@ -42,14 +42,14 @@ export default function Home() {
   return (
     <Container>
       <div className="title">
-        <h1>Use the Marvel API</h1>
+        <h1>Universo Marvel API</h1>
       </div>
       <SearchBar
         handleClick={handleClick}
         setHeroes={setHeroes}
         setError={setError}
       />
-      <h2>Results</h2>
+      <h2>Resultados</h2>
       <Grid>{cards ? cards : null}</Grid>
     </Container>
   );
