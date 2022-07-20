@@ -1,21 +1,24 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+// Import components
+import Navbar from "./components/Navbar";
+import NavItem from "./components/Navbar/NavItem";
+import Logo from "./components/Navbar/Logo";
+import About from "./components/About";
+import HeroDetails from "./components/HeroDetails";
+import Home from "./components/Home";
 
-import Inicio from './routes/Inicio';
-// import Sobre from './routes/Sobre';
-import HeroisDetalhes from './routes/HeroisDetalhes';
-
-//
-import Navbar from './componentes/Navbar';
+// Import dependencies
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar logo={<Logo text={"Marbabel"} />}>
+        <NavItem to={"/"} text={"Home"} />
+        <NavItem to={"/about"} text={"About"} />
+      </Navbar>
       <Routes>
-        <Route path={'/'} element={<Inicio/>}/>
-        {/*<Route path={'/sobre'} element={<Sobre/>}/> */}
-        <Route path={'/:id'} element={<HeroisDetalhes/>}/>
-
+        <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<HeroDetails />} />
       </Routes>
     </Router>
   );
